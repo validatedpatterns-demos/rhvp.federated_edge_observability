@@ -7,4 +7,4 @@ This repository contains the Ansible code including roles and playbooks for the 
 ## Start Here
 
 If you've followed a link to this repository, but are not really sure what it contains
-or how to use it, head over to the parent patter, [Ansible Edge GitOps](http://validatedpatterns.io/ansible-edge-gitops/) for additional context and installation instructions
+or how to use it, head over to the parent pattern, [Ansible Edge GitOps](http://validatedpatterns.io/ansible-edge-gitops/) for additional context and installation instructions
