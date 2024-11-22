@@ -1,0 +1,18 @@
+---
+# tasks file for kiosk_mode
+- name: Ensure hostname set
+  ansible.builtin.hostname:
+    name: "{{ inventory_hostname.split('.')[0] }}"
+
+- name: Register as user with password and auto-subscribe to available content.
+  community.general.redhat_subscription:
+    state: present
+    username: "{{ rhsm_username }}"
+    password: "{{ rhsm_password }}"
+    auto_attach: true
+
+- name: Install Open Telemetry Collector
+  ansible.builtin.package:
+    name:
+      - opentelemetry-collector
+    state: present

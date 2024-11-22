@@ -1,0 +1,8 @@
+[vms]
+rhel9-edgenode-001.edge-gitops-vms.svc
+rhel9-edgenode-002.edge-gitops-vms.svc
+rhel9-edgenode-003.edge-gitops-vms.svc
+rhel9-edgenode-004.edge-gitops-vms.svc
+
+[all:vars]
+ansible_user=cloud-user

@@ -1,0 +1,7 @@
+---
+- name: Configure OTEL Collector on VMs
+  hosts: all
+  gather_facts: true
+  become: true
+  roles:
+    - otel_collector
