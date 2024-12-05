@@ -1,0 +1,6 @@
+---
+- name: restart otel-collector
+  ansible.builtin.service:
+    name: opentelemetry-collector
+    state: restarted
+    enabled: true

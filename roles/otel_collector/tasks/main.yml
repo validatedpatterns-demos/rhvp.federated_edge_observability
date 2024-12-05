@@ -16,3 +16,18 @@
     name:
       - opentelemetry-collector
     state: present
+
+- name: Manage OTEL Config
+  ansible.builtin.template:
+    src: config.yml.j2
+    dest: /etc/opentelemetry-collector/configs/01-federated-edge-observability.yaml
+    owner: root
+    group: root
+    mode: "0644"
+  notify: "restart otel-collector"
+
+- name: Manage OTEL Service
+  ansible.builtin.service:
+    name: opentelemetry-collector
+    state: started
+    enabled: true
