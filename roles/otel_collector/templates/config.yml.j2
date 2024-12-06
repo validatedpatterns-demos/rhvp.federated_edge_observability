@@ -1,13 +1,10 @@
 exporters:
-  otlphttp/mimir:
-    endpoint: "{{ otel_collector_otlphttp_endpoint  }}"
   otlp:
     endpoint: "{{ otel_collector_otlp_endpoint }}"
     tls:
       insecure: true # Set to true if you aren't using TLS
       insecure_skip_verify: true
 receivers:
-
   otlp:
     protocols:
       grpc:
