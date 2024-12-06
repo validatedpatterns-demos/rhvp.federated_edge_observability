@@ -2,5 +2,5 @@
 #rhsm_username: "{{ rhsm_username }}"
 #rhsm_password: "{{ rhsm_password }}"
 otel_collector_cluster_domain: exmaple.com
-otel_collector_otlphttp_endpoint: "http://mimir-edge-observability.{{ otel_collector_cluster_domain }}/otlp"
+otel_collector_otlphttp_endpoint: "http://otel-collector-edge-observability-stack.apps.{{ otel_collector_cluster_domain }}/otlp"
 otel_collector_otlp_endpoint: "ep.{{ otel_collector_cluster_domain }}:4317"
