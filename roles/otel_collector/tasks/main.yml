@@ -14,11 +14,13 @@
 - name: Check package facts
   ansible.builtin.package_facts:
 
+# Project packages are not signed
 - name: Install Open Telemetry Collector
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name:
       - https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v0.114.0/otelcol-contrib_0.114.0_linux_amd64.rpm
     state: present
+    disable_gpg_check: true
   when:
     - ansible_facts['packages']['otelcol-contrib'] is not defined
 
