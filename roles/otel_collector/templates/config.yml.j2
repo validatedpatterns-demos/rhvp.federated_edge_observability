@@ -99,4 +99,4 @@ service:
     metrics/agent:
       receivers: [ otlp, prometheus/agent, hostmetrics/agent ]
       processors: [ attributes/agent, resourcedetection/system, transform, batch/agent ]
-      exporters: [ otlphttp/mimir, otlp ]
+      exporters: [ otlp ]
