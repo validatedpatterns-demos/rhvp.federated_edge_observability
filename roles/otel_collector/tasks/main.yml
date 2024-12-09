@@ -24,6 +24,9 @@
   when:
     - ansible_facts['packages']['otelcol-contrib'] is not defined
 
+- name: Manage drop-in to run as root
+  ansible.builtin.include_tasks: dropin.yml
+
 - name: Manage OTEL Config
   ansible.builtin.template:
     src: config.yml.j2

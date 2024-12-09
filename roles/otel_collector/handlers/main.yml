@@ -1,6 +1,7 @@
 ---
 - name: restart otel-collector
-  ansible.builtin.service:
+  ansible.builtin.systemd_service:
     name: "{{ otel_collector_service_name }}"
+    daemon_reload: true
     state: restarted
     enabled: true

@@ -1,0 +1,17 @@
+---
+- name: Create dropin directory
+  ansible.builtin.file:
+    path: /etc/systemd/system/otelcol-contrib.service.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Install dropin file
+  ansible.builtin.copy:
+    src: otelcol-contrib.service.conf
+    dest: /etc/systemd/system/otelcol-contrib.service.d/override.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: restart otel-collector
