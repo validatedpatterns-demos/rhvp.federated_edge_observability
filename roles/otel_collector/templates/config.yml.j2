@@ -2,7 +2,6 @@ exporters:
   otlp:
     endpoint: "{{ otel_collector_otlp_endpoint }}"
     tls:
-      insecure: true # Set to true if you aren't using TLS
       insecure_skip_verify: true
 receivers:
   otlp:
@@ -48,16 +47,16 @@ receivers:
       paging:
       processes:
       process:
-      mute_process_user_error: true
-      metrics:
-      process.cpu.utilization:
-        enabled: true
-      process.memory.utilization:
-        enabled: true
-      process.threads:
-        enabled: true
-      process.paging.faults:
-        enabled: true
+        mute_process_user_error: true
+        metrics:
+          process.cpu.utilization:
+            enabled: true
+          process.memory.utilization:
+            enabled: true
+          process.threads:
+            enabled: true
+          process.paging.faults:
+            enabled: true
 
 processors:
   batch/agent:
