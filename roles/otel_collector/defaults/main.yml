@@ -2,5 +2,5 @@
 #rhsm_username: "{{ rhsm_username }}"
 #rhsm_password: "{{ rhsm_password }}"
 otel_collector_cluster_domain: exmaple.com
-otel_collector_otlp_endpoint: "otel-collector-edge-observability-stack.apps.{{ otel_collector_cluster_domain }}:443"
+otel_collector_otlp_endpoint: "otel-collector-edge-observability-stack.{{ otel_collector_cluster_domain }}:443"
 otel_collector_service_name: otelcol-contrib
